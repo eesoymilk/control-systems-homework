@@ -8,11 +8,12 @@ clc
 
 %% Problem 1 : Simulate spring-mass-damper system of unforced response with
 %              damping ratio equal to 0.3, 0.6, and 1 (see Fig. 2.46)
-
 % Consider the underdamped cases where y(0) = 5m, M = 1kg, k = 1, wn = 1
 % Case 1: zeta = 0.3    (underdamped)
 % Case 2: zeta = 0.6    (underdamped)
 % Case 3: zeta = 1      (critically damped)
+
+fprintf('Problem 1\n(see plot)\n\n')
 
 y0 = 5;
 wn = 1;
@@ -43,6 +44,8 @@ legend( ...
 )
 
 %% Problem 2 : Simulate Example 2.19
+disp('Problem 2')
+
 G1 = tf(1, [1 10]);
 G2 = tf(1, [1 1]);
 G3 = tf([1 0, 1], [1 4 4]);
@@ -56,12 +59,15 @@ sys2_2 = feedback(G2 * sys2_1, H2 / G4);
 T_2 = minreal(feedback(G1 * sys2_2, H3))
 
 %% Problem 3 : Simulate Example 2.20
+disp('Problem 3')
+
 G3_1 = tf(10, [1 1]);
 G3_2 = tf(1, [2 .5]);
 G3_3 = tf(540);
 sys3_1 = feedback(G3_1 * G3_2, tf(-.1));
 T_3 = feedback(G3_3 * sys3_1, 1)
 
+disp('(see plot)')
 t_3 = 0: .005: 5;
 figure(Name='Problem 3')
 plot(t_3, step(T_3, t_3))
