@@ -70,7 +70,7 @@ fprintf([ ...
 ], y(end), y10)
 
 %% Problem 4 : CP3.7
-fprintf('Problem 4 : CP3.4\n(see plot)\n\n')
+fprintf('Problem 4 : CP3.7\n(see plot)\n\n')
 
 A = [0 1; -2 -3];
 B = [0; 1];
