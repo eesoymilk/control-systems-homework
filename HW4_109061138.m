@@ -1,4 +1,4 @@
-% Controls Systems Homework 3
+% Controls Systems Homework 4
 % 109061138 張育瑋
 
 % Reset matlab environment
@@ -35,7 +35,7 @@ SettlingTime = [
     stepinfo(T1(200)).SettlingTime;
     stepinfo(T1(500)).SettlingTime
 ];
-SteadyStateError = [y1(end) - 5; y2(end) - 5; y3(end) - 5];
+SteadyStateError = [abs(y1(end) - 5); abs(y2(end) - 5); abs(y3(end) - 5)];
 table(K, Overshoot, SettlingTime, SteadyStateError, ...
     'VariableNames', ...
     ["K", "Persent Overshoot", "Settling Time", "Steady-State Error"])
@@ -57,7 +57,7 @@ plot(tOut2, y2), grid on
 
 disp('(c)')
 SteadyStateTrackingError = table( ...
-    abs(y1(end)) - 1,abs(y2(end)) - .1, 'VariableNames', ...
+    abs(y1(end) - 1),abs(y2(end) - .1), 'VariableNames', ...
     ["unit step input", "unit step disturbance input"] ...
 )
 
